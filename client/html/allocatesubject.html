@@ -1,0 +1,40 @@
+<template name="allocateSubject">
+ {{#if currentUser}}
+		
+	<form class="sub">
+		
+          		<label id="name">List Of Departments</label>
+			<select name="dept" id="name1">
+	            	  <option>Departments</option>
+		    	  <option>           </option>
+		    	  <option>           </option>
+	        	  {{#each department}}
+                   	    <option value="{{name}}">{{name}}</option>
+                 	  {{/each}}
+	       		</select>
+           
+          		<label id="name">List Of Semesters</label>
+			<select name="sem" id="name1">
+	            	<option>Semesters</option>
+		    	  <option>          </option>
+		    	  <option>          </option>
+			  <option>1 Semester</option>
+		    	  <option>2 Semester</option>
+			  <option>3 Semester</option>
+		    	  <option>4 Semester</option>
+	        	  <option>5 Semester</option>
+		    	  <option>6 Semester</option> 
+                   	</select>
+	
+		<input type="submit" value="Get Teacher's List with Subject's List" id="css1">
+		{{#each teacher}}
+		  <br><br>
+                  <li  class='name' name="teacher" value="{{name}}">{{name}}</li>
+             	  {{#each subject}}
+		    <input type="checkbox" name="subject" class="subcheck" value="{{shortname}}" >{{checked}} {{shortname}}
+               	  {{/each}}
+		{{/each}}
+		<br> <br> <input type="button" value="Submit" class="su" >
+		</form>            
+  {{/if}}
+</template>

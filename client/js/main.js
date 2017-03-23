@@ -1,0 +1,54 @@
+Template.hello.helpers({
+'isAdmin':function(){
+var firstUserObj = Meteor.users.findOne()._id;
+var thisUser = Meteor.userId();
+console.log(firstUserObj);
+console.log(thisUser);
+return (firstUserObj == thisUser);
+},
+
+'isTeacher':function(){
+  var thisUser = Meteor.users.findOne(Meteor.userId());
+  return (thisUser.profile.role == 'teacher');
+},
+
+'isDepartmentClerk':function(){
+  var thisUser = Meteor.users.findOne(Meteor.userId());
+  return (thisUser.profile.role == 'dclerk');
+},
+
+'isPrincipalClerk':function(){
+  var thisUser = Meteor.users.findOne(Meteor.userId());
+  return (thisUser.profile.role == 'pclerk');
+}
+
+});
+
+Template.hello.events({
+ 'submit #createUserForm':function(event){
+    event.preventDefault();
+    var username = event.target.username.value;
+    var email = event.target.email.value;
+    var password = event.target.password.value;
+    var role = event.target.role.value;
+    Accounts.createUser({
+                            username: username,
+                            email : email,
+                            password : password,
+                            profile  : {
+                                role:role
+                            }
+		});
+    
+},
+
+  'click #addDb':function(event) {
+    $('.subcheck').each(function() {
+        if (this.checked) {
+            subject = this.value;
+            teacher = $(this).parent().attr('id');
+            console.log(subject,teacher);
+        }   
+    });
+   }
+});

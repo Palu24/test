@@ -1,0 +1,43 @@
+<template name="teacher">
+  {{#if currentUser}}
+	<form class="btn2">
+			
+			<label id="name"> Teacher's Name:</label>
+			<input type="text" name="nm" id="name1">
+			<label id="name">Qualification:</label>
+			<select name="qualification" id="name1">
+			  <option value="btech">   Btech   </option>
+			  <option value="diploma"> Diploma </option>
+			  <option value="bca">     BCA     </option>
+			  <option value="mca">     MCA     </option>
+			</select>
+			<label id="name3"> Date of Birth:</label>
+			<input type="date" name="date" id="name1">
+			<label id="name3">Address</label>
+			<input type="text" name="add" id="name1">
+			<label id="name3">Phone No.</label>
+			<input type="text" name="phn" id="name1">
+			<label id="name3">Email Id</label>
+			<input type="email" name="email" id="name1">
+			<label id="name3">Password</label>
+			<input type="password" name="pass" id="name1">
+			<label id="name3">Unique Code:</label>
+			<input type="text" name="code" id="name1">			
+			<label id="name3">Date of registration is:</label>
+			<label id="name5">{{date}},{{month}},{{year}} </label>
+			<div>
+		  		<label id="name">List Of Departments</label>
+				<select name="dept" id="name1">
+			    	  <option>Departments</option>
+			    	  <option>           </option>
+			    	  <option>           </option>
+				  {{#each department}}
+		           	     <option value="{{name}}">{{name}}</option>
+		         	  {{/each}}
+		       	        </select>
+                	</div>
+		<input type="submit" value="Submit" id="css1">
+	</form>
+  {{/if}}
+</template>
+

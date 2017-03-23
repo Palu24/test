@@ -1,0 +1,48 @@
+<template name="riAttendance">
+<br> <br>
+	<form class="sub"> 
+		<div>
+          		<label>List Of Departments</label>
+			<select name="dept">
+	            	  <option>Departments</option>
+		    	  <option>           </option>
+		    	  <option>           </option>
+	        	  {{#each department}}
+                   	    <option value="{{name}}">{{name}}</option>
+                 	  {{/each}}
+	                </select>
+                </div> 
+		<div>
+          		  <label>List Of Years</label>
+			  <select name="year">
+	            	    <option>Year  </option>
+		    	    <option>      </option>
+		    	    <option>      </option>
+			    <option>1 Year</option>
+		    	    <option>2 Year</option>
+			    <option>3 Year</option>  	
+	       		  </select>
+			</div>
+		<input type="submit" value="Submit">
+		</form>
+		<br><br>
+       <form class="toggle">
+	<p>By deafult, all students are present. Please, list the absent students by checking the toggle buttons</p>
+            <ul>
+	        {{#each info}}
+	        <li id="white">{{name}}
+	           <p>{{>toggle}}</p>
+	        </li>
+	        {{/each}}
+             </ul>
+             <input type="submit" value="Submit">
+        </form>
+</template>
+
+<template name="toggle">
+  <!-- Rounded switch -->
+  <label class="switch">
+     <input type="checkbox" name="toggle" value="{{name}}" class="check" checked="on">
+     <div class="slider round" > </div>
+  </label>
+</template>

@@ -1,0 +1,85 @@
+
+<head>
+  <title>Hazzir</title>
+</head>
+
+<body>
+  {{> hello}}
+</body>
+
+<template name="hello">
+  {{#if currentUser}}
+	<main class='bk'>
+	<div class='background'>
+	{{> loginButtons}}
+  	{{#if isAdmin}}
+	{{> allocateSubject}}
+	<!--<div class='style'>
+		<form class='main-form' id='createUserForm'><br>
+		Username<input type='text' name='username' id='login-email' class='cs' />
+		<br>Email<input type='email' name='email' id='login-email' class='cs'/>
+		<br>Password<input type='password' name='password' id='login-email' class='cs' />
+		<br>
+		<label class="cs pos" id='login-email'>Role</label>
+			<br> 
+			<select name="role" id='login-email' class="cs pos">
+	            	 <option value='dclerk'>Department Clerk</option>
+		    	 <option value='pclerk'>Principal Clerk</option>
+                       </select>
+		<br><br> <input type='submit' value='Create' id='css' />
+		</form>
+		</div>-->
+	{{else if isTeacher}}
+		 <a href="teacher"> <input type="button" value="Take Attendance" name="attendance"></a>
+		<p>Its a teacher</p>
+		<li class='name' id='name1' > Name 1
+			<li class ='sub'>sub1</li>
+			<input value='sub1' type='checkbox' class='subcheck'/>
+			<li class ='sub'>sub1 </li>
+                        <input value='sub2' type='checkbox' class='subcheck'/>
+			<li class ='sub'>sub1 </li>
+                        <input value='sub3' type='checkbox' class='subcheck'/>
+			<li class ='sub'>sub1 </li>
+		</li>
+                <li class='name' id='name2' > Name 2
+			<li class ='sub'>sub1</li>
+			<input value='sub1' type='checkbox' class='subcheck'/>
+			<li class ='sub'>sub1 </li>
+                        <input value='sub2' type='checkbox' class='subcheck'/>
+			<li class ='sub'>sub1 </li>
+                        <input value='sub3' type='checkbox' class='subcheck'/>
+			<li class ='sub'>sub1 </li>
+		</li>
+		<button id='addDb'>add db </button>
+	{{else if isDepartmentClerk}}
+		<p>Department Clerk</p>
+		
+	     <a href="student"> <input type="button" value="Add Student" name="student" ></a>
+	     <a href="addteacher"> <input type="button" value="Add Teacher" name="teacher" ></a>
+             <a href="insertsubject"> <input type="button" value="Add Subjects" name="insertsubjects" ></a>
+	     <a href="allocatesubject"> <input type="button" value="Assign Subjects" name="allocatesubject" >
+             </a>
+
+	{{else if isPrincipalClerk}}
+		<p>Principal Clerk</p>
+           <a href="department"> <input type="button" value="Add Department" name="department"></a>
+	{{/if}}
+	</div>
+	</main>
+
+  {{else}}  
+	<main class='home'>
+	<div class='polythene'>
+
+	<h1> Hazir </h1>
+	<p> An attendance management app </p>  
+	{{> loginButtons}}
+	</div>
+	</main>
+   {{/if}}
+
+</template>
+
+
+
+

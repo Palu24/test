@@ -1,0 +1,17 @@
+<template name="departmentInformation">
+  {{#if currentUser}}
+             <form class="deptt">
+		    
+			<legend id="info"> Department's Information</legend>
+			<div class="s1">
+		          <label id="name">Department's Name</label>
+			  <input type="text" name="deptt" class='cs' placeholder="Department's Name">
+			<br>  
+			  <label>Head Of Department</label>
+			  <input type="text" name="hod" id="hod" class="cs" placeholder="HOD">
+		      	<br>
+		      <input type="submit" value="Add Department"  id="css1"> 
+		    </div> 
+	      </form>
+  {{/if}}
+</template>
