@@ -1,6 +1,6 @@
 Template.hello.helpers({
 'isAdmin':function(){
-var firstUserObj = Meteor.users.findOne()._id;
+var firstUserObj = Meteor.users.findOne().reverse()._id;
 var thisUser = Meteor.userId();
 console.log(firstUserObj);
 console.log(thisUser);
@@ -40,15 +40,5 @@ Template.hello.events({
                             }
 		});
     
-},
-
-  'click #addDb':function(event) {
-    $('.subcheck').each(function() {
-        if (this.checked) {
-            subject = this.value;
-            teacher = $(this).parent().attr('id');
-            console.log(subject,teacher);
-        }   
-    });
-   }
+}
 });

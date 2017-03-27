@@ -29,10 +29,11 @@
 		<input type="submit" value="Get Teacher's List with Subject's List" id="css1">
 		{{#each teacher}}
 		  <br><br>
-                  <li  class='name' name="teacher" value="{{name}}">{{name}}</li>
+                  <li id="{{name}}"  class="des" name="teacher" value="{{name}}">{{name}}
              	  {{#each subject}}
-		    <input type="checkbox" name="subject" class="subcheck" value="{{shortname}}" >{{checked}} {{shortname}}
+		  <input type="checkbox" name="subject" class="subcheck" value="{{shortname}}" >{{shortname}}
                	  {{/each}}
+		 </li>
 		{{/each}}
 		<br> <br> <input type="button" value="Submit" class="su" >
 		</form>            

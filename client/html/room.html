@@ -1,0 +1,22 @@
+<template name="room">
+{{#if currentUser}}
+	<form class="btn1">
+	<legend id="info">Room's Information</legend>
+	<div class="box">
+	 <label id="name2">List Of Departments:</label>
+			  <select name="dept" id="name1">
+	            	    <option>Departments</option>
+		    	    <option>           </option>
+		    	    <option>           </option>
+	        	    {{#each department}}
+                   	       <option value="{{name}}">{{name}}</option>
+                 	    {{/each}}
+	       		  </select>
+	<label id="name"> Enter Room's Name:</label>
+			<input type="text" name="room" id="name1">
+	<input type="submit" value="Submit"  id="css1">
+	</div>
+</form>
+  {{/if}}
+</template>
+			

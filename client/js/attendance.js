@@ -1,4 +1,4 @@
-Meteor.subscribe('attendance');
+
 
 Template.riAttendance.events({
 	
@@ -17,7 +17,10 @@ Template.riAttendance.events({
 					absent.push(targets[i].value);
 				    }
 					   }
-			Meteor.call('takeAttendance',present,absent);
+			Attendance.insert({ present:present, 
+					     absent:absent,
+						});
+			console.log(Attendance.find().fetch());
  					},
 	'submit .sub': function(event){
          	event.preventDefault();
@@ -25,14 +28,14 @@ Template.riAttendance.events({
 		var year  = event.target.year.value;
 		console.log(deptt);
 		console.log(year);
-		Meteor.call('getData',deptt,year,function(err,data){
-						    if(err){
-							console.log(err);
-							    } 
-						    else    { 
-						        Session.set('data',data);
-							    }
-						 });
+		var data=Students.find({
+					 department: deptt,
+					       year: year}).fetch();
+			console.log(deptt);
+			console.log(year);
+		        Session.set('data',data);
+								
+						
     } 
 });
 

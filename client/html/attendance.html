@@ -12,6 +12,7 @@
                  	  {{/each}}
 	                </select>
                 </div> 
+		<br/> 
 		<div>
           		  <label>List Of Years</label>
 			  <select name="year">
@@ -23,10 +24,12 @@
 			    <option>3 Year</option>  	
 	       		  </select>
 			</div>
-		<input type="submit" value="Submit">
+	<br/>	
+		<input type="submit" value="Click Here to Mark Attendance" id="css1">
 		</form>
 		<br><br>
        <form class="toggle">
+	<br/>
 	<p>By deafult, all students are present. Please, list the absent students by checking the toggle buttons</p>
             <ul>
 	        {{#each info}}
@@ -35,7 +38,7 @@
 	        </li>
 	        {{/each}}
              </ul>
-             <input type="submit" value="Submit">
+             <input type="submit" value="Submit" id="css1">
         </form>
 </template>
 

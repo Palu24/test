@@ -17,7 +17,10 @@ Template.allocateSubject.events({
                 if (this.checked) {
                 subject = this.value;
                 teacher = $(this).parent().attr('id');
-                console.log(subject,teacher);}
+                Subteacher.insert({
+			subject:subject,
+			teacher:teacher});
+			}
         });  
     	}			   
 });

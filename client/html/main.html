@@ -4,17 +4,18 @@
 </head>
 
 <body>
-  {{> hello}}
+{{> hello}}
 </body>
 
 <template name="hello">
   {{#if currentUser}}
 	<main class='bk'>
-	<div class='background'>
+	
 	{{> loginButtons}}
   	{{#if isAdmin}}
-	{{> allocateSubject}}
-	<!--<div class='style'>
+	
+	
+	<div class='style'>
 		<form class='main-form' id='createUserForm'><br>
 		Username<input type='text' name='username' id='login-email' class='cs' />
 		<br>Email<input type='email' name='email' id='login-email' class='cs'/>
@@ -28,49 +29,35 @@
                        </select>
 		<br><br> <input type='submit' value='Create' id='css' />
 		</form>
-		</div>-->
-	{{else if isTeacher}}
-		 <a href="teacher"> <input type="button" value="Take Attendance" name="attendance"></a>
-		<p>Its a teacher</p>
-		<li class='name' id='name1' > Name 1
-			<li class ='sub'>sub1</li>
-			<input value='sub1' type='checkbox' class='subcheck'/>
-			<li class ='sub'>sub1 </li>
-                        <input value='sub2' type='checkbox' class='subcheck'/>
-			<li class ='sub'>sub1 </li>
-                        <input value='sub3' type='checkbox' class='subcheck'/>
-			<li class ='sub'>sub1 </li>
-		</li>
-                <li class='name' id='name2' > Name 2
-			<li class ='sub'>sub1</li>
-			<input value='sub1' type='checkbox' class='subcheck'/>
-			<li class ='sub'>sub1 </li>
-                        <input value='sub2' type='checkbox' class='subcheck'/>
-			<li class ='sub'>sub1 </li>
-                        <input value='sub3' type='checkbox' class='subcheck'/>
-			<li class ='sub'>sub1 </li>
-		</li>
-		<button id='addDb'>add db </button>
+		</div>
+	
 	{{else if isDepartmentClerk}}
-		<p>Department Clerk</p>
+		<div class="polyy">
+			<br/>
+	     <a href="student"> <input class="link1" type="button" value="Add Student" name="student" ></a>
 		
-	     <a href="student"> <input type="button" value="Add Student" name="student" ></a>
-	     <a href="addteacher"> <input type="button" value="Add Teacher" name="teacher" ></a>
-             <a href="insertsubject"> <input type="button" value="Add Subjects" name="insertsubjects" ></a>
-	     <a href="allocatesubject"> <input type="button" value="Assign Subjects" name="allocatesubject" >
+	     <a href="addteacher"> <input class="link2" type="button" value="Add Teacher" name="teacher" ></a>
+             <a href="insertsubject"> <input  class="link3" type="button" value="Add Subjects" name="insertsubjects" ></a>
+	     <a href="allocatesubject"> <input class="link4" type="button" value="Assign Subjects" name="allocatesubject">
              </a>
-
-	{{else if isPrincipalClerk}}
-		<p>Principal Clerk</p>
-           <a href="department"> <input type="button" value="Add Department" name="department"></a>
-	{{/if}}
+             <a href="timetable"> <input class="link5" type="button" value="Insert Time Table" name="timetable"></a>
 	</div>
+	{{else if isPrincipalClerk}}
+		
+           <a href="department"> <input type="button" value="Add Department" name="department"></a>
+	    <a href="room"> <input type="button" value="Add Rooms" name="room" ></a>
+		
+	{{else if isTeacher}}
+		
+		{{> riAttendance}}
+		
+	{{/if}}
+	
 	</main>
-
+       
   {{else}}  
 	<main class='home'>
 	<div class='polythene'>
-
 	<h1> Hazir </h1>
 	<p> An attendance management app </p>  
 	{{> loginButtons}}
