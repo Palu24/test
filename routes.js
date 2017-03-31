@@ -3,12 +3,6 @@ FlowRouter.route('/student', {
 		BlazeLayout.render("student");
 			   }
 });
-/*
-FlowRouter.route('/', {
-	action: function() {
-		BlazeLayout.render("hello");
-			   }
-});
 
 FlowRouter.route('/addteacher', {
 	action: function() {
@@ -16,9 +10,23 @@ FlowRouter.route('/addteacher', {
   			   }
 });
 
+FlowRouter.route('/attendance', {
+	action: function() {
+		BlazeLayout.render("riAttendance");
+			   }
+});
+
+
+
 FlowRouter.route('/department', {
 	action: function() {
 		BlazeLayout.render("departmentInformation");
+  			   }
+});
+
+FlowRouter.route('/room', {
+	action: function() {
+		BlazeLayout.render("room");
   			   }
 });
 
@@ -39,9 +47,3 @@ FlowRouter.route('/insertsubject', {
 		BlazeLayout.render("insertSubject");
 			   }
 });
-
-FlowRouter.route('/room', {
-	action: function() {
-		BlazeLayout.render("room");
-			   }
-});*/

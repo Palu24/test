@@ -1,3 +1,11 @@
+Template.hello.events({
+    'click #worksClick': function (evt) {
+        $('html, body').animate({
+        scrollTop: $("#works").offset().top
+    }, 2000);
+  }
+});
+
 Template.hello.helpers({
 'isAdmin':function(){
 var firstUserObj = Meteor.users.findOne().reverse()._id;

@@ -1,6 +1,6 @@
 <template name="allocateSubject">
  {{#if currentUser}}
-		
+		<div class="background-template3">
 	<form class="sub">
 		
           		<label id="name">List Of Departments</label>
@@ -27,15 +27,17 @@
                    	</select>
 	
 		<input type="submit" value="Get Teacher's List with Subject's List" id="css1">
+		<br> <br>
 		{{#each teacher}}
-		  <br><br>
+		  <br>
                   <li id="{{name}}"  class="des" name="teacher" value="{{name}}">{{name}}
              	  {{#each subject}}
-		  <input type="checkbox" name="subject" class="subcheck" value="{{shortname}}" >{{shortname}}
+		  <input type="checkbox" name="subject" id="designofattr" class="subcheck" value="{{shortname}}" >{{shortname}}
                	  {{/each}}
 		 </li>
 		{{/each}}
 		<br> <br> <input type="button" value="Submit" class="su" >
-		</form>            
+		</form>  
+		</div>          
   {{/if}}
 </template>

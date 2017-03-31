@@ -9,11 +9,11 @@
 
 <template name="hello">
   {{#if currentUser}}
-	<main class='bk'>
-	
+	<div class="overalldesign">
 	{{> loginButtons}}
   	{{#if isAdmin}}
-	
+	<main class='bk'>
+	<div class="background">
 	
 	<div class='style'>
 		<form class='main-form' id='createUserForm'><br>
@@ -30,31 +30,30 @@
 		<br><br> <input type='submit' value='Create' id='css' />
 		</form>
 		</div>
-	
+		</div>
+		</main>	
 	{{else if isDepartmentClerk}}
-		<div class="polyy">
-			<br/>
+		<main class='bk'>
 	     <a href="student"> <input class="link1" type="button" value="Add Student" name="student" ></a>
-		
 	     <a href="addteacher"> <input class="link2" type="button" value="Add Teacher" name="teacher" ></a>
              <a href="insertsubject"> <input  class="link3" type="button" value="Add Subjects" name="insertsubjects" ></a>
 	     <a href="allocatesubject"> <input class="link4" type="button" value="Assign Subjects" name="allocatesubject">
              </a>
              <a href="timetable"> <input class="link5" type="button" value="Insert Time Table" name="timetable"></a>
-	</div>
+		</main>
 	{{else if isPrincipalClerk}}
-		
-           <a href="department"> <input type="button" value="Add Department" name="department"></a>
-	    <a href="room"> <input type="button" value="Add Rooms" name="room" ></a>
-		
+		<main class='bk'>
+           <a href="department"> <input type="button" value="Add Department" name="department" class="link6"></a>
+	    <a href="room"> <input type="button" value="Add Rooms" name="room" class="link7"></a>
+		</main>
 	{{else if isTeacher}}
-		
+		<main class='bk'>
+	<div class="background">
 		{{> riAttendance}}
-		
-	{{/if}}
-	
+		</div>
 	</main>
-       
+	{{/if}}
+	</div>       
   {{else}}  
 	<main class='home'>
 	<div class='polythene'>
