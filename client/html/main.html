@@ -9,7 +9,6 @@
 
 <template name="hello">
   {{#if currentUser}}
-	<div class="overalldesign">
 	{{> loginButtons}}
   	{{#if isAdmin}}
 	<main class='bk'>
@@ -33,14 +32,40 @@
 		</div>
 		</main>	
 	{{else if isDepartmentClerk}}
-		<main class='bk'>
+	<div class="wrapper">
+    <div class="sticky_navigation_wrapper">
+        <div class="sticky_navigation">
+            
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+         
+                        <ul class="nav navbar-nav">
+                            <li><a href="student" class="space">Add Student</a></li>
+                            <li><a href="addteacher" class="space">Add Teacher</a></li>
+                            <li><a href="insertsubject" class="space">Add Subjects</a></li>
+                            <li><a href="allocatesubject" class="space">Assign Subjects</a></li>
+			    <li><a href="timetable" class="space">Insert Time Table</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+	<!-- <div class="row">
+    <div class="col-md-3 col-sm-3 col-xs-6"> <a href="student" class="btn btn-sm animated-button thar-one">Add Student</a> </div>
+    <div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" class="btn btn-sm animated-button thar-two">Login</a> </div>
+    <div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" class="btn btn-sm animated-button thar-three">Register</a> </div>
+    <div class="col-md-3 col-sm-3 col-xs-6"> <a href="#" class="btn btn-sm animated-button thar-four">Learn more</a> </div>
+  </div>
+	-->	<!--<main class='bk'>
 	     <a href="student"> <input class="link1" type="button" value="Add Student" name="student" ></a>
 	     <a href="addteacher"> <input class="link2" type="button" value="Add Teacher" name="teacher" ></a>
              <a href="insertsubject"> <input  class="link3" type="button" value="Add Subjects" name="insertsubjects" ></a>
 	     <a href="allocatesubject"> <input class="link4" type="button" value="Assign Subjects" name="allocatesubject">
              </a>
              <a href="timetable"> <input class="link5" type="button" value="Insert Time Table" name="timetable"></a>
-		</main>
+		</main>-->
 	{{else if isPrincipalClerk}}
 		<main class='bk'>
            <a href="department"> <input type="button" value="Add Department" name="department" class="link6"></a>
@@ -51,16 +76,20 @@
 	<div class="background">
 		{{> riAttendance}}
 		</div>
+	
 	</main>
 	{{/if}}
-	</div>       
+	
+     
   {{else}}  
 	<main class='home'>
+	<div class="background-polythene">
 	<div class='polythene'>
 	<h1> Hazir </h1>
 	<p> An attendance management app </p>  
 	{{> loginButtons}}
 	</div>
+</div> 
 	</main>
    {{/if}}
 

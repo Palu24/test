@@ -1,4 +1,11 @@
-
+Template.riAttendance.rendered = function() {
+    if(!this._rendered) {
+var thisId=Meteor.user().username;
+console.log(thisId);
+var info= Teachers.find({name:thisId});
+Session.set('information',info);
+    }
+}
 
 Template.riAttendance.events({
 	
@@ -44,6 +51,12 @@ Template.riAttendance.helpers({
 	var data= Session.get("data");
 		console.log(data);
 		return data;
+		},
+'data':function(){
+	var dataout= Session.get("information");
+		console.log(dataout);
+		return dataout;
+
 		},
 'department':function(){
 	 return Departments.find().fetch();

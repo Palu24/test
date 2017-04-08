@@ -1,6 +1,10 @@
 <template name="riAttendance">
 <br> <br>
 	<form class="sub"> 
+				 {{#each data}}
+	        <h2>{{name}}</h2>
+	        
+	        {{/each}}
 		<div>
           		<label>List Of Departments</label>
 			<select name="dept">

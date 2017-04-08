@@ -1,54 +1,58 @@
 <template name="student">
-{{#if currentUser}}
-	<div class="background-template">
-	<form class="btn1">
-			
-			<label id="name"> Student's Name:</label>
-			<input type="text" name="nm" id="name1" >
-			
-			<label id="name"> Father's Name:</label>
-			<input type="text" name="fname" id="name1" >
-		
-			<label id="name"> Mother's Name:</label>
-			<input type="text" name="mname" id="name1">
-			          
-          		  <label id="name2">List Of Departments: </label>
-			  <select name="dept" id="name1">
-	            	    <option>Departments</option>
-		    	    <option>           </option>
-		    	    <option>           </option>
-	        	    {{#each department}}
-                   	       <option value="{{name}}">{{name}}</option>
-                 	    {{/each}}
+  {{#if currentUser}}
+    <div class="container">
+      <div class="form-area">
+        <form class="btn1" method="post" role="form">
+          <br style="clear:both">
+          <h3 style="margin-bottom: 25px; text-align: center;">Student's Information</h3>
+    			<div class="form-group">
+			         <input type="text" name="nm" class="form-control" placeholder="Student's Name" required>
+			    </div>
+					<div class="form-group">
+			         <input type="text" name="fname" class="form-control" placeholder="Father's Name" required>
+          </div>
+          <div class="form-group">
+			         <input type="text" name="mname" class="form-control" placeholder="Mother's name" required>
+          </div>
+          <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Departments
+                <span class="caret"></span>
+              </button>
+			        <select name="dept" id="name1" class="dropdown-menu" role="menu">
+	        	      {{#each department}}
+                    <option value="{{name}}">{{name}}</option>
+                 	{{/each}}
 	       		  </select>
-					
-          		  <label id="name2">List Of Years:</label>
-			  <select name="year" id="name1">
-	            	    <option>Year  </option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    <option>1 Year</option>
-		    	    <option>2 Year</option>
-			    <option>3 Year</option>  	
-	       		  </select>
-			
-			<label id="name3"> Date of Birth:</label>
-			<input type="date" name="date"  id="name1">
-			
-			<label id="name3">Address:</label>
-			<input type="text" name="add" id="name4"> 
-			
-			<label id="name3">Phone No:</label>
-			<input type="text" name="phn" id="name1" >
-		
-			<label id="name3">Email Id:</label>
-			<input type="email" name="email" id="name1">
-			
-			<label id="name3">Password:</label>
-			<input type="password" name="pass" id="name1">
-			
-		<input type="submit" value="Submit"  id="css1">
-	</form>
-	</div>
+          </div>
+          <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Years
+                <span class="caret"></span>
+              </button>
+              <select name="year" id="name1">
+      			       <option>1 Year</option>
+      		    	   <option>2 Year</option>
+      			       <option>3 Year</option>
+      	      </select>
+          </div>
+          <div class="form-group">
+			         <input type="date" name="date" class="form-control" placeholder="Date of Birth" required>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" type="textarea" id="message" name="add" placeholder="Address" maxlength="140" rows="7"></textarea>
+                <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>
+          </div>
+          <div class="form-group">
+               <input type="text" name="phn" class="form-control" placeholder="Phone No." required>
+          </div>
+          <div class="form-group">
+			         <input type="email" name="email" class="form-control" placeholder="Email Id" required>
+          </div>
+          <div class="form-group">
+               <input type="password" name="pass" class="form-control" placeholder="Password" required>
+          </div>
+		      <input type="submit" value="Submit Form" class="btn btn-primary pull-right">
+        </form>
+      </div>
+    </div>
   {{/if}}
 </template>
