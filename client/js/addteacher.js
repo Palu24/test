@@ -1,3 +1,21 @@
+$(document).ready(function(){
+    $('#characterLeft').text('140 characters left');
+    $('#message').keydown(function () {
+        var max = 140;
+        var len = $(this).val().length;
+        if (len >= max) {
+            $('#characterLeft').text('You have reached the limit');
+            $('#characterLeft').addClass('red');
+            $('#btnSubmit').addClass('disabled');
+        }
+        else {
+            var ch = max - len;
+            $('#characterLeft').text(ch + ' characters left');
+            $('#btnSubmit').removeClass('disabled');
+            $('#characterLeft').removeClass('red');
+        }
+    });
+});
 
 Template.teacher.events({
     'submit .btn2': function(event){
@@ -11,9 +29,10 @@ Template.teacher.events({
 		var email         = event.target.email.value;
 		var pass          = event.target.pass.value;
 		var deptt         = event.target.dept.value;
-		Teachers.insert({         name: naam,
+		Teachers.insert({
+                    name: naam,
 					 qualification: qualification,
-					 	   dob: date,
+					 	         dob: date,
 					          code: code,
 					       address: address,
 					         phone: phone,
@@ -29,13 +48,13 @@ Template.teacher.events({
                                 role:'teacher'
                             }
 		});
-		event.target.nm.value    = " ";
-		event.target.date.value  = " ";
-		event.target.add.value   = " ";
-		event.target.phn.value   = " ";
-		event.target.email.value = " ";
-		event.target.pass.value  = " ";
-		event.target.code.value  = " ";
+		event.target.nm.value    ="Teacher's Name";
+		event.target.date.value  = "Date of Birth";
+		event.target.add.value   = "Address";
+		event.target.phn.value   = "Phone No.";
+		event.target.email.value = "Email Id";
+		event.target.pass.value  = "Password";
+		event.target.code.value  = "Unique Code";
 		event.target.dept.value  = "Departments";
     }
 });
@@ -44,17 +63,17 @@ Template.teacher.helpers({
     'date': function(){
         var d = new Date();
 	var dor= d.getDate();
-	return dor; 
+	return dor;
     },
     'month': function(){
         var d = new Date();
 	var mor= d.getMonth() + 1;
-	return mor; 
+	return mor;
     },
     'year': function(){
         var d = new Date();
 	var yor= d.getFullYear();
-	return yor; 
+	return yor;
     },
     'department':function(){
 	return Departments.find().fetch();

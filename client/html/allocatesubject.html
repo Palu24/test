@@ -1,43 +1,44 @@
 <template name="allocateSubject">
- {{#if currentUser}}
-		<div class="background-template3">
-	<form class="sub">
-		
-          		<label id="name">List Of Departments</label>
-			<select name="dept" id="name1">
-	            	  <option>Departments</option>
-		    	  <option>           </option>
-		    	  <option>           </option>
-	        	  {{#each department}}
-                   	    <option value="{{name}}">{{name}}</option>
-                 	  {{/each}}
-	       		</select>
-           
-          		<label id="name">List Of Semesters</label>
-			<select name="sem" id="name1">
-	            	<option>Semesters</option>
-		    	  <option>          </option>
-		    	  <option>          </option>
-			  <option>1 Semester</option>
-		    	  <option>2 Semester</option>
-			  <option>3 Semester</option>
-		    	  <option>4 Semester</option>
-	        	  <option>5 Semester</option>
-		    	  <option>6 Semester</option> 
-                   	</select>
-	
-		<input type="submit" value="Get Teacher's List with Subject's List" id="css1">
-		<br> <br>
-		{{#each teacher}}
-		  <br>
-                  <li id="{{name}}"  class="des" name="teacher" value="{{name}}">{{name}}
-             	  {{#each subject}}
-		  <input type="checkbox" name="subject" id="designofattr" class="subcheck" value="{{shortname}}" >{{shortname}}
-               	  {{/each}}
-		 </li>
-		{{/each}}
-		<br> <br> <input type="button" value="Submit" class="su" >
-		</form>  
-		</div>          
+  {{#if currentUser}}
+    <div class="container">
+      <div class="form-area">
+        <form class="sub" method="post" role="form">
+          <br style="clear:both">
+          <h3 style="margin-bottom: 25px; text-align: center;">Assign Subjects</h3>
+          <div class="form-group">
+             <select name="dept" class="form-control" id="deptt">
+                <option>Departments</option>
+                <option>           </option>
+               {{#each department}}
+                <option value="{{name}}">{{name}}</option>
+               {{/each}}
+             </select>
+          </div>
+          <div class="form-group">
+               <select name="sem" class="form-control" id="semester">
+                   <option>Semesters </option>
+                   <option>          </option>
+                   <option>1 Semester</option>
+                   <option>2 Semester</option>
+                   <option>3 Semester</option>
+                   <option>4 Semester</option>
+                   <option>5 Semester</option>
+                   <option>6 Semester</option>
+               </select>
+          </div>
+        	{{#each teacher}}
+            <li id="{{name}}" name="teacher" class="space-of" value="{{name}}">{{name}}
+              {{#each subject}}
+              
+              <br>
+		            <input type="checkbox" name="subject" id="designofattr" class="subcheck" value="{{shortname}}" ><span style="padding: 0 11px 0px 10px;">{{shortname}}</span>
+              {{/each}}
+
+		        </li>
+          {{/each}}
+          <input type="submit" value="Submit" class="btn btn-primary pull-right" id="display-button">
+        </form>
+      </div>
+    </div>
   {{/if}}
 </template>

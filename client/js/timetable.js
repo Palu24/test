@@ -10,47 +10,48 @@ Template.timetable.helpers({
 	var data= Session.get("roomdata");
 	console.log(data);
 	 return data;
-	
+
 	},
 	'subjectinfo':function(){
 	var datainfo= Session.get("subdata");
 	console.log(datainfo);
 	 return datainfo;
-	
+
 	}
 });
 /*Template.timeTable.helpers({
     'teacher': function(){
         return Teachers.find().fetch();
     }
-});*/	
+});*/
 
 
 
 Template.timetable.events({
-    'click .get': function(event){
+    'change #department': function(event){
          	event.preventDefault();
 		var deptt = $('.deptt').val();
+    console.log(deptt);
 		Session.set('department',deptt);
 			var found= Teachers.find({ department:deptt }).fetch();
 			console.log("teacher's data found");
-			Session.set('teacherdata',found); 
+			Session.set('teacherdata',found);
 			var data= Rooms.find({ department:deptt }).fetch();
 			console.log(data);
-			Session.set('roomdata',data);        
+			Session.set('roomdata',data);
 					},
 
-'click .data': function(event){
+'change #teacher': function(event){
          	event.preventDefault();
-		var deptt= Session.get('department'); 
+		var deptt= Session.get('department');
 			var data= Rooms.find({department:deptt}).fetch();
 			console.log(data);
-			Session.set('roomdata',data); 
-		var teacher = $('.teach').val(); 
+			Session.set('roomdata',data);
+		var teacher = $('.teach').val();
 			console.log(teacher);
 			var info= Subteacher.find({teacher:teacher}).fetch();
 			console.log(info);
-			     Session.set('subdata',info); 
+			     Session.set('subdata',info);
 					},
 
 	'submit .teacher':function(event){
@@ -154,7 +155,7 @@ Template.timetable.events({
 		var wedclass8   = event.target.wedclass8.value;
 		var thursclass8 = event.target.thursclass8.value;
 		var friclass8   = event.target.friclass8.value;
-		
+
 		console.log("data reached");
 			TimeTable.insert({department:deptt,
 					name:teacher,
@@ -193,7 +194,7 @@ Template.timetable.events({
 					thurssub5:thurssub5,
 					thurssub6:thurssub6,
 					thurssub7:thurssub7,
-					thurssub8:thurssub8,	
+					thurssub8:thurssub8,
 					//fri sub
 					frisub1:frisub1,
 					frisub2:frisub2,
@@ -238,7 +239,7 @@ Template.timetable.events({
 					thursclass5:thursclass5,
 					thursclass6:thursclass6,
 					thursclass7:thursclass7,
-					thursclass8:thursclass8,	
+					thursclass8:thursclass8,
 					//fri class
 					friclass1:friclass1,
 					friclass2:friclass2,
@@ -346,6 +347,5 @@ Template.timetable.events({
 		event.target.tueclass8.value="Rooms";
 		event.target.wedclass8.value="Rooms";
 		 event.target.thursclass8.value="Rooms";
-		event.target.friclass8.value="Rooms";		
+		event.target.friclass8.value="Rooms";
 }});
-

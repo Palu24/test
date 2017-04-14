@@ -1,22 +1,25 @@
 <template name="room">
-{{#if currentUser}}
-	<div class="background-template4">
-	<form class="btn1">
-	<br>
-	 <label id="name2">List Of Departments:</label>
-			  <select name="dept" id="name1">
-	            	    <option>Departments</option>
-		    	    <option>           </option>
-		    	    <option>           </option>
-	        	    {{#each department}}
-                   	       <option value="{{name}}">{{name}}</option>
-                 	    {{/each}}
-	       		  </select>
-	<label id="name"> Enter Room's Name:</label>
-			<input type="text" name="room" id="name1">
-	<input type="submit" value="Submit"  id="css1">
-</form>
-</div>
-  {{/if}}
+	{{#if currentUser}}
+    <div class="container">
+      <div class="form-area">
+        <form class="btn1" method="post" role="form">
+          <br style="clear:both">
+          <h3 style="margin-bottom: 25px; text-align: center;">Add Rooms</h3>
+					<div class="form-group">
+             <select name="dept" class="form-control">
+                <option>Departments</option>
+                <option>           </option>
+               {{#each department}}
+                <option value="{{name}}">{{name}}</option>
+               {{/each}}
+             </select>
+          </div>
+					<div class="form-group">
+		         <input type="text" name="room" class="form-control" placeholder="Enter Room's Name" required>
+          </div>
+          <input type="submit" value="Submit Form" class="btn btn-primary pull-right">
+        </form>
+     </div>
+    </div>
+ {{/if}}
 </template>
-			

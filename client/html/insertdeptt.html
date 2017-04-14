@@ -1,17 +1,19 @@
 <template name="departmentInformation">
   {{#if currentUser}}
-	<div class="background-template5">
-             <form class="deptt">
-			<div class="s1">
-		          <label id="name">Department's Name</label>
-			  <input type="text" name="deptt" class='cs' placeholder="Department's Name">
-			<br>  
-			  <label id="name">Head Of Department</label>
-			  <input type="text" name="hod" id="hod" class="cs" placeholder="HOD">
-		      	<br><br>
-		      <input type="submit" value="Add Department"  id="css1"> 
-		    </div> 
-	      </form>
-		</div>
+    <div class="container">
+      <div class="form-area">
+        <form class="deptt" method="post" role="form">
+          <br style="clear:both">
+          <h3 style="margin-bottom: 25px; text-align: center;">Add Department</h3>
+          <div class="form-group">
+            <input type="text" name="deptt" class="form-control" placeholder="Department's Name" required>
+          </div>
+          <div class="form-group">
+            <input type="text" name="hod" class="form-control" placeholder="Head of Department" required>
+          </div>
+          <input type="submit" value="Add Department" class="btn btn-primary pull-right">
+        </form>
+      </div>
+    </div>
   {{/if}}
 </template>

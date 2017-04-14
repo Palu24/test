@@ -1,14 +1,17 @@
 Template.riAttendance.rendered = function() {
     if(!this._rendered) {
 var thisId=Meteor.user().username;
+
 console.log(thisId);
-var info= Teachers.find({name:thisId});
+var info= Teachers.find({name:thisId}).fetch();
+console.log(info);
 Session.set('information',info);
+
     }
 }
 
 Template.riAttendance.events({
-	
+
 	'submit .toggle':function(event){
 			event.preventDefault();
 			var targets = event.target.toggle;
@@ -24,7 +27,7 @@ Template.riAttendance.events({
 					absent.push(targets[i].value);
 				    }
 					   }
-			Attendance.insert({ present:present, 
+			Attendance.insert({ present:present,
 					     absent:absent,
 						});
 			console.log(Attendance.find().fetch());
@@ -41,9 +44,9 @@ Template.riAttendance.events({
 			console.log(deptt);
 			console.log(year);
 		        Session.set('data',data);
-								
-						
-    } 
+
+
+    }
 });
 
 Template.riAttendance.helpers({

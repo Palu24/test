@@ -1,931 +1,883 @@
 <template name="timetable">
 	{{#if currentUser}}
-<div class="poly">
-<form class="teacher">
-		 <div>
-          		<label id="listt">List Of Departments</label>
-			<select name="deptt" class="deptt">
-	            	 <option>Departments</option>
-		    	 <option>           </option>
-		    	 <option>           </option>
-	        	 {{#each department}}
-                   	    <option value="{{name}}">{{name}}</option>
-                 	 {{/each}}
-	               </select>
-                </div><br> <input type="button" value="Get Teacher's List" class="get" id="css1">
-		<br><br> <br>
-		<div>
-          		<label id="teachers">List Of Teachers</label>
-			<select name="teach" class="teach">
-	            	<option>Teachers</option>
-		    	<option>        </option>
-		    	<option>        </option>
-	        	{{#each teacher}}
-                   	   <option value="{{name}}">{{name}}({{code}})</option>
-                 	{{/each}}
-	        </select>
-                </div>
-		<br>
-		<input type="button" value="Get Subject and Romm's List" class="data" id="css1">
-		<br><br><br>
-		<div class="display">
-		<table style="width:100%">
-                  <tr>
-		    <th name="days" id="monday"><h2>  Days</h2></th>
-	            <th name="mon" id="monday"><h2>  Monday</h2></th>
-		    <th name="tue" id="monday"><h2> Tuesday</h2></th>
-	            <th name="wed" id="monday"><h2>   Wednesday</h2></th>
-		    <th name="thurs" id="monday"><h2>  Thursday</h2></th>
-		    <th name="fri" id="monday"><h2>  Friday</h2></th>
-		  </tr>
-		
-		<!--1 lecture-->
-		  <tr>
-				<th name="1" id="monday">1</th>
-				<td id="dis">
-					
-          		  <label>List Of Subjects</label>
-			  <select name="monsub1">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="monclass1">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-			
-				</td>
-				<td id="dis">
-					 <label>List Of Subjects</label>
-			  <select name="tuesub1">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="tueclass1">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-				<td id="dis">
-					 <label>List Of Subjects</label>
-			  <select name="wedsub1">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="wedclass1">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-				<td id="dis">
-					 <label>List Of Subjects</label>
-			  <select name="thurssub1">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="thursclass1">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-				<td id="dis">
-					 <label>List Of Subjects</label>
-			  <select name="frisub1">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="friclass1">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-			</tr>
-			<!--2 lecture-->
-			<tr>
-				<th name="2" id="monday">2</th>
-				<td id="dis">
-					  <label>List Of Subjects</label>
-			  <select name="monsub2">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="monclass2">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-			
-				</td>
-				<td id="dis">
-					 <label>List Of Subjects</label>
-			  <select name="tuesub2">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="tueclass2">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-				<td id="dis">
-					 <label>List Of Subjects</label>
-			  <select name="wedsub2">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="wedclass2">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-				<td id="dis">
-					 <label>List Of Subjects</label>
-			  <select name="thurssub2">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="thursclass2">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-				<td id="dis">
-					 <label>List Of Subjects</label>
-			  <select name="frisub2">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="friclass2">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-			</tr>
-			<!--3 lecture-->
-			<tr>
-				<th name="3" id="monday">3</th>
-				<td>
-					  <label>List Of Subjects</label>
-			  <select name="monsub3">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="monclass3">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-			
-				</td>
-				<td>
-					 <label>List Of Subjects</label>
-			  <select name="tuesub3">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="tueclass3">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-				<td>
-					 <label>List Of Subjects</label>
-			  <select name="wedsub3">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="wedclass3">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-				<td>
-					 <label>List Of Subjects</label>
-			  <select name="thurssub3">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="thursclass3">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-				<td>
-					 <label>List Of Subjects</label>
-			  <select name="frisub3">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="friclass3">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-			</tr>
-			<!--4 lecture-->
-			<tr> 
-				<th name="4" id="monday">4</th>
-				<td>
-				  <label>List Of Subjects</label>
-			  <select name="monsub4">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="monclass4">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-			
-				</td>
-				<td>
-					 <label>List Of Subjects</label>
-			  <select name="tuesub4">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="tueclass4">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-				<td>
-					 <label>List Of Subjects</label>
-			  <select name="wedsub4">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="wedclass4">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-				<td>
-					 <label>List Of Subjects</label>
-			  <select name="thurssub4">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="thursclass4">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-				<td>
-					 <label>List Of Subjects</label>
-			  <select name="frisub4">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="friclass4">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-			</tr>
-			<!--5 lecture-->
-			<tr> 
-				<th name="5" id="monday">5</th>
-			<td>
-				  <label>List Of Subjects</label>
-			  <select name="monsub5">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="monclass5">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-			
-				</td>
-				<td>
-					 <label>List Of Subjects</label>
-			  <select name="tuesub5">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="tueclass5">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-				<td>
-					 <label>List Of Subjects</label>
-			  <select name="wedsub5">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="wedclass5">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-				<td>
-					 <label>List Of Subjects</label>
-			  <select name="thurssub5">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="thursclass5">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-				<td>
-					 <label>List Of Subjects</label>
-			  <select name="frisub5">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="friclass5">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-			</tr>
-			<!--6 lecture-->
-			<tr>  
-				<th name="6" id="monday">6</th>
-			<td>
-				  <label>List Of Subjects</label>
-			  <select name="monsub6">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="monclass6">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-			
-				</td>
-				<td>
-					 <label>List Of Subjects</label>
-			  <select name="tuesub6">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="tueclass6">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-				<td>
-					 <label>List Of Subjects</label>
-			  <select name="wedsub6">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="wedclass6">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-				<td>
-					 <label>List Of Subjects</label>
-			  <select name="thurssub6">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="thursclass6">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-				<td>
-					 <label>List Of Subjects</label>
-			  <select name="frisub6">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="friclass6">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-			</tr>
-			<!--7 lecture-->
-			<tr>
-				<th name="7" id="monday">7</th>
-				<td>
-				  <label>List Of Subjects</label>
-			  <select name="monsub7">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="monclass7">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-			
-				</td>
-				<td>
-					 <label>List Of Subjects</label>
-			  <select name="tuesub7">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="tueclass7">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-				<td>
-					 <label>List Of Subjects</label>
-			  <select name="wedsub7">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="wedclass7">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-				<td>
-					 <label>List Of Subjects</label>
-			  <select name="thurssub7">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="thursclass7">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-				<td>
-					 <label>List Of Subjects</label>
-			  <select name="frisub7">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="friclass7">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-			 </tr>
+<div class="background-of-boot">
+<div class="container">
+        <form class="teacher" method="post" role="form">
 
-			<!--8 lecture-->
-			<tr> 
-				<th name="8" id="monday">8</th>
-				<td>
-					  <label>List Of Subjects</label>
-			  <select name="monsub8">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="monclass8">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-			
-				</td>
-				<td>
-					 <label>List Of Subjects</label>
-			  <select name="tuesub8">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="tueclass8">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-				<td>
-					 <label>List Of Subjects</label>
-			  <select name="wedsub8">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="wedclass8">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-				<td>
-					 <label>List Of Subjects</label>
-			  <select name="thurssub8">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="thursclass8">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-				<td>
-					 <label>List Of Subjects</label>
-			  <select name="frisub8">
-	            	    <option>Subjects</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each subjectinfo}}
-                   	   <option value="{{subject}}">{{subject}}</option>
-                 	   {{/each}} 	
-	       		  </select>
-			<br/>
-          		  <label>List Of Rooms</label>
-			  <select name="friclass8">
-	            	    <option>Rooms</option>
-		    	    <option>      </option>
-		    	    <option>      </option>
-			    {{#each roominfo}}
-                   	   <option value="{{room}}">{{room}}</option>
-                 	   {{/each}}  	
-	       		  </select>
-				</td>
-			 </tr>
-			</table>
-		</div>
-		<br> 	<input type="submit" value="Submit Time Table" id="css1">
-			
-</form>
+          <br style="clear:both">
+          <h2 style="margin-bottom: 25px; text-align: center;">Insert Time Table</h2>
+					<div class="form-group">
+						 <select name="deptt" class="form-control deptt" id="department">
+									<option>Departments</option>
+									<option>           </option>
+							  {{#each department}}
+									<option value="{{name}}">{{name}}</option>
+							  {{/each}}
+						 </select>
+					</div>
+					<div class="form-group">
+						 <select name="teach" class="form-control teach" id="teacher">
+									<option>Teachers</option>
+									<option>        </option>
+							  {{#each teacher}}
+									<option value="{{name}}">{{name}}({{code}})</option>
+							  {{/each}}
+						 </select>
+					</div>
+
+
+
+<div class="time-table">
+									<table class="table table-striped table-bordered" style="margin:0px">
+                  	<tr>
+		    							<th name="days"> <h2>Days     </h2></th>
+	            				<th name="mon">  <h2 style="padding: 0 25px 0 25px;">Monday   </h2></th>
+		    							<th name="tue">  <h2 style="padding: 0 18px 0 23px;">Tuesday  </h2></th>
+	            				<th name="wed">  <h2 >Wednesday</h2></th>
+		    							<th name="thurs"><h2 style="padding: 0 14px 0px 7px;">Thursday </h2></th>
+		    							<th name="fri">  <h2 style="padding: 0 37px 0 37px;">Friday   </h2></th>
+		  						</tr>
+									<!--1 lecture-->
+		  						<tr>
+											<th name="1">1</th>
+											<td>
+												<div class="form-group">
+													 <select name="monsub1" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+														  {{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+														  {{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="monclass1" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+														  {{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+														  {{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="tuesub1" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+														  {{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+														  {{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="tueclass1" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+														  {{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+														  {{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="wedsub1" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="wedclass1" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="thurssub1" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="thursclass1" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="frisub1" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="friclass1" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+									</tr>
+									<!--2 lecture-->
+									<tr>
+											<th name="2">2</th>
+											<td>
+												<div class="form-group">
+													 <select name="monsub2" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="monclass2" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="tuesub2" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="tueclass2" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="wedsub2" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="wedclass2" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="thurssub2" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="thursclass2" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="frisub2" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="friclass2" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+									</tr>
+									<!--3 lecture-->
+									<tr>
+											<th name="3">3</th>
+											<td>
+												<div class="form-group">
+													 <select name="monsub3" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="monclass3" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="tuesub3" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="tueclass3" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="wedsub3" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="wedclass3" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="thurssub3" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="thursclass3" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="frisub3" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="friclass3" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+									</tr>
+									<!--4 lecture-->
+									<tr>
+											<th name="4">4</th>
+											<td>
+												<div class="form-group">
+													 <select name="monsub4" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="monclass4" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="tuesub4" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="tueclass4" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="wedsub4" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="wedclass4" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="thurssub4" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="thursclass4" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="frisub4" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="friclass4" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+									</tr>
+									<!--5 lecture-->
+									<tr>
+											<th name="5">5</th>
+											<td>
+												<div class="form-group">
+													 <select name="monsub5" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="monclass5" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="tuesub5" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="tueclass5" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="wedsub5" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="wedclass5" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="thurssub5" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="thursclass5" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="frisub5" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="friclass5" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+									</tr>
+									<!--6 lecture-->
+									<tr>
+											<th name="6">6</th>
+											<td>
+												<div class="form-group">
+													 <select name="monsub6" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="monclass6" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="tuesub6" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="tueclass6" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="wedsub6" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="wedclass6" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="thurssub6" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="thursclass6" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="frisub6" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="friclass6" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+									</tr>
+									<!--7 lecture-->
+									<tr>
+											<th name="7">7</th>
+											<td>
+												<div class="form-group">
+													 <select name="monsub7" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="monclass7" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="tuesub7" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="tueclass7" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="wedsub7" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="wedclass7" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="thurssub7" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="thursclass7" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="frisub7" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="friclass7" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+									</tr>
+									<!--8 lecture-->
+									<tr>
+											<th name="8">8</th>
+											<td>
+												<div class="form-group">
+													 <select name="monsub8" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="monclass8" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="tuesub8" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="tueclass8" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="wedsub8" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="wedclass8" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="thurssub8" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="thursclass8" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+											<td>
+												<div class="form-group">
+													 <select name="frisub8" class="form-control">
+																<option>Subjects</option>
+																<option>        </option>
+															{{#each subjectinfo}}
+																<option value="{{subject}}">{{subject}}</option>
+															{{/each}}
+													 </select>
+												</div>
+												<div class="form-group">
+													 <select name="friclass8" class="form-control">
+																<option>Rooms</option>
+																<option>     </option>
+															{{#each roominfo}}
+																<option value="{{room}}">{{room}}</option>
+															{{/each}}
+													 </select>
+												</div>
+											</td>
+									</tr>
+									</table>
+
 </div>
-{{/if}}
+<br>
+					<input type="submit" value="Submit Time Table" class="btn btn-primary pull-right" id="design-of-button">
+<br> <br>
+				</form>
+
+</div>
+</div>
+	{{/if}}
 </template>

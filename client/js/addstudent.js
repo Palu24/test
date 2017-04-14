@@ -1,4 +1,4 @@
-$(document).ready(function(){ 
+$(document).ready(function(){
     $('#characterLeft').text('140 characters left');
     $('#message').keydown(function () {
         var max = 140;
@@ -16,6 +16,9 @@ $(document).ready(function(){
         }
     });
 });
+
+
+
 
 
 Template.student.events({
@@ -49,14 +52,14 @@ Template.student.events({
                                 role:'student'
                             }
 		});
-		event.target.nm.value     =" ";
-		event.target.fname.value  =" ";
-		event.target.mname.value  =" ";
-		event.target.date.value   =" ";
-		event.target.add.value    =" ";
-		event.target.phn.value    =" ";
-		event.target.email.value  =" ";
-		event.target.pass.value  =" ";
+		event.target.nm.value     ="Student's Name";
+		event.target.fname.value  ="Father's Name";
+		event.target.mname.value  ="Mother's name";
+		event.target.date.value   ="Date of Birth";
+		event.target.add.value    ="Address";
+		event.target.phn.value    ="Phone No.";
+		event.target.email.value  ="Email Id";
+		event.target.pass.value  ="Password";
     }
 });
 

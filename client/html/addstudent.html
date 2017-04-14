@@ -14,25 +14,23 @@
           <div class="form-group">
 			         <input type="text" name="mname" class="form-control" placeholder="Mother's name" required>
           </div>
-          <div class="btn-group">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Departments
-                <span class="caret"></span>
-              </button>
-			        <select name="dept" id="name1" class="dropdown-menu" role="menu">
+          <div class="form-group">
+               <select name="dept" class="form-control">
+                    <option>Departments</option>
+                    <option>           </option>
 	        	      {{#each department}}
                     <option value="{{name}}">{{name}}</option>
-                 	{{/each}}
-	       		  </select>
+                  {{/each}}
+              </select>
           </div>
-          <div class="btn-group">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Years
-                <span class="caret"></span>
-              </button>
-              <select name="year" id="name1">
+          <div class="form-group">
+               <select name="year" class="form-control">
+                   <option>Years</option>
+                   <option>      </option>
       			       <option>1 Year</option>
       		    	   <option>2 Year</option>
       			       <option>3 Year</option>
-      	      </select>
+      	       </select>
           </div>
           <div class="form-group">
 			         <input type="date" name="date" class="form-control" placeholder="Date of Birth" required>

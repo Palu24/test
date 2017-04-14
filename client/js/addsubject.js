@@ -14,10 +14,10 @@ Template.insertSubject.events({
 					       shortname: subs
 				});
 			console.log("subjects inserted");
-			
-		event.target.subjectfull.value   ="";
-		event.target.subjectshort.value  =" ";
-		event.target.code.value          =" ";
+
+		event.target.subjectfull.value   ="Subject's Full Name";
+		event.target.subjectshort.value  ="Subject's Short Name";
+		event.target.code.value          ="Subject's Code No.";
     }
 });
 

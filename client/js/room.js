@@ -7,9 +7,7 @@ Template.room.events({
 				   room:room
 				});
 			console.log("room inserted");
-			
-		
-		event.target.room.value =" ";
+						event.target.room.value ="Enter Room's Name";
     }
 });
 

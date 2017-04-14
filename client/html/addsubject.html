@@ -1,44 +1,43 @@
 <template name="insertSubject">
   {{#if currentUser}}
-<div class="background-template2">
-	<form class="sub">
-		<div class="size">
-          		<label id="name">List Of Departments</label>
-			<select name="dept" id="name1">
-	            	  <option>Departments</option>
-		    	  <option>           </option>
-		    	  <option>           </option>
-	        	  {{#each department}}
-                   	    <option value="{{name}}">{{name}}</option>
-                 	  {{/each}}
-	                </select>
-              
-          		<label id="name">List Of Semesters</label>
-			<select name="sem" id="name1">
-	            	 <option>Semesters</option>
-		    	 <option>          </option>
-		    	 <option>          </option>
-			 <option>1 Semester</option>
-		    	 <option>2 Semester</option>
-			 <option>3 Semester</option>
-		    	 <option>4 Semester</option>
-	        	 <option>5 Semester</option>
-		    	 <option>6 Semester</option> 
-                       </select>
-		
-		
-		<label id="name">Subject's Full Name</label>
-		<input type="text" name="subjectfull" id="name1">
-
-		<label id="name">Subject's Short Name</label>
-		<input type="text" name="subjectshort" id="name1">
-	
-		<label id="name">Subject's Code No.</label>
-		<input type="text" name="code" id="name1">
-		<br> <br>
-		<input type="submit" value="Insert" id="css1">
-		</div>
-	</form>  
-	</div>          
-  {{/if}}
+    <div class="container">
+      <div class="form-area">
+        <form class="sub" method="post" role="form">
+          <br style="clear:both">
+          <h3 style="margin-bottom: 25px; text-align: center;">Add Subjects</h3>
+          <div class="form-group">
+             <select name="dept" class="form-control">
+                <option>Departments</option>
+                <option>           </option>
+               {{#each department}}
+                <option value="{{name}}">{{name}}</option>
+               {{/each}}
+             </select>
+          </div>
+          <div class="form-group">
+               <select name="sem" class="form-control">
+                   <option>Semesters </option>
+                   <option>          </option>
+      			       <option>1 Semester</option>
+            		   <option>2 Semester</option>
+            			 <option>3 Semester</option>
+            		   <option>4 Semester</option>
+            	     <option>5 Semester</option>
+            		   <option>6 Semester</option>
+      	       </select>
+          </div>
+          <div class="form-group">
+            <input type="text" name="subjectfull" class="form-control" placeholder="Subject's Full Name" required>
+          </div>
+          <div class="form-group">
+		        <input type="text" name="subjectshort" class="form-control" placeholder="Subject's Short Name" required>
+          </div>
+          <div class="form-group">
+		        <input type="text" name="code" class="form-control" placeholder="Subject's Code No." required>
+          </div>
+          <input type="submit" value="Submit Form" class="btn btn-primary pull-right">
+        </form>
+     </div>
+    </div>
+ {{/if}}
 </template>

@@ -1,11 +1,38 @@
 <template name="riAttendance">
-<br> <br>
-	<form class="sub"> 
-				 {{#each data}}
-	        <h2>{{name}}</h2>
-	        
-	        {{/each}}
-		<div>
+
+<!--<br> <br>
+	<form class="sub">-->
+
+	<div class="container" style="margin-top:-62px; margin-left:150px; width:0px;">
+
+
+<div class="panel panel-default panel-table display-of-table">
+    <div class="panel-heading">
+        <div class="tr">
+            <div class="td">Name</div>
+            <div class="td">Phone No.</div>
+            <div class="td">Email Id</div>
+						<div class="td">Code</div>
+
+        </div>
+    </div>
+    <div class="panel-body display-of-td">
+        <div class="tr">
+					{{#each data}}
+					  <div class="td">{{name}}</div>
+            <div class="td">{{phone}}</div>
+            <div class="td">{{emailId}}</div>
+						<div class="td">{{code}}</div>
+
+        {{/each}}
+
+
+
+</div>
+</div></div></div>
+
+
+	<!--	<div>
           		<label>List Of Departments</label>
 			<select name="dept">
 	            	  <option>Departments</option>
@@ -15,8 +42,8 @@
                    	    <option value="{{name}}">{{name}}</option>
                  	  {{/each}}
 	                </select>
-                </div> 
-		<br/> 
+                </div>
+		<br/>
 		<div>
           		  <label>List Of Years</label>
 			  <select name="year">
@@ -25,10 +52,10 @@
 		    	    <option>      </option>
 			    <option>1 Year</option>
 		    	    <option>2 Year</option>
-			    <option>3 Year</option>  	
+			    <option>3 Year</option>
 	       		  </select>
 			</div>
-	<br/>	
+	<br/>
 		<input type="submit" value="Click Here to Mark Attendance" id="css1">
 		</form>
 		<br><br>
@@ -43,13 +70,13 @@
 	        {{/each}}
              </ul>
              <input type="submit" value="Submit" id="css1">
-        </form>
+        </form>-->
 </template>
-
+<!--
 <template name="toggle">
-  <!-- Rounded switch -->
+   Rounded switch
   <label class="switch">
      <input type="checkbox" name="toggle" value="{{name}}" class="check" checked="on">
      <div class="slider round" > </div>
   </label>
-</template>
+</template>-->
